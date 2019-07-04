@@ -1,7 +1,7 @@
 const Discord = require(`discord.js`)
 const dateformat = require('dateformat');
 const bot = new Discord.Client();
-bot.login(`NTIyMDgzOTcwOTIyMzE1Nzk3.DvF0iw.btooTPA0HDZCM9oRR-iUYFxUNPw`);
+
 
 bot.on(`ready`, () => {
   console.log(`Log Bot | 0%`);
@@ -11,7 +11,7 @@ bot.on(`ready`, () => {
 bot.on(`guildMemberUpdate`, async (om, nm) => {
   if(!om || !om.id) return;
 
-  const channel = nm.guild.channels.find(ch => ch.name == 'log')
+  const channel = nm.guild.channels.find(ch => ch.name == 'log','logs')
   if(!channel) return console.log('I can\'t find it');
 
 
